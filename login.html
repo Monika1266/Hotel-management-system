@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>login</title>
+    <link href="login.css" type="text/css" rel="stylesheet">
+</head>
+<body  background="D:\Hotel management system\images\login.jpg" style="background-repeat:no-repeat;background-size:cover;">
+    <div class="container">
+        <h1 class="hotel-name">My Hotel</h1>
+        <form class="login-form">
+            <h2>Login</h2>
+            <div class="imgcontainer">
+              <img src="C:\Users\HP\Pictures\Saved Pictures\img.png" alt="Avatar" class="avatar">
+            </div>
+            <input type="email" placeholder="Email" required>
+            <input type="password" placeholder="Password" required>
+            <div class="radio-buttons">
+                <input type="radio" name="user-type" id="admin" value="Admin">
+                <label for="admin">Admin</label>
+                <input type="radio" name="user-type" id="customer" value="Customer">
+                <label for="customer">Customer</label>
+            </div>
+            <button type="button" class="btn" onclick="validateForm()">Login</button>
+        </form>
+    </div>
+    <script>
+        function validateForm() {
+            var userType = document.querySelector('input[name="user-type"]:checked').value;
+            if (userType === "Admin") {
+                window.location.href = "room.html"; 
+            } else if (userType === "Customer") {
+                window.location.href = "book.html"; 
+            } else {
+                alert("Please select a user type."); 
+            }
+        }
+    </script>
+</body>
+</html>
